@@ -1,20 +1,59 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Smart Menu</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content class="ion-padding app-background">
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  <!-- Menu Input with Mic -->
+  <ion-item lines="none" class="menu-input">
+    <ion-input
+      placeholder="Describe menu item"
+      [(ngModel)]="menuText"
+      class="menu-text">
+    </ion-input>
+
+    <ion-button slot="end" fill="clear" (click)="startListening()">
+      <i class="fas fa-microphone mic-icon"></i>
+    </ion-button>
+  </ion-item>
+
+  <!-- Generate Menu Button -->
+  <ion-button
+    expand="block"
+    color="primary"
+    (click)="generateItem()"
+    [disabled]="loading">
+    {{ loading ? 'Creating...' : 'Generate Menu' }}
+  </ion-button>
+
+  <!-- AI Generated Menu Card -->
+  <ion-card *ngIf="generatedItem" class="generated-card">
+    <img *ngIf="generatedItem.imageUrl" [src]="generatedItem.imageUrl" class="menu-image" />
+
+    <ion-card-header>
+      <ion-card-title>{{ generatedItem.title }}</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <p>{{ generatedItem.description }}</p>
+      <h3>₹ {{ generatedItem.price }}</h3>
+
+      <input type="file" (change)="onFileSelected($event)" />
+
+      <ion-button expand="block" color="secondary" (click)="saveItem()">
+        Save Menu
+      </ion-button>
+
+      <ion-button expand="block" color="primary" (click)="addToCart(generatedItem)">
+        Add to Cart
+      </ion-button>
+
+      <ion-button expand="block" color="tertiary" (click)="shareWhatsApp()">
+        Share
+      </ion-button>
+    </ion-card-content>
+  </ion-card>
+
 </ion-content>

@@ -1,27 +1,54 @@
-#container {
-  text-align: center;
-
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
+/* App background */
+.app-background {
+  --background: #f8f8f5; /* Off-white */
+  padding: 15px;
 }
 
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
+/* Input with mic styling */
+.menu-input {
+  --background: #fff;
+  --border-color: #841535; /* Wine red border */
+  --border-radius: 10px;
+  --box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  margin-bottom: 15px;
 }
 
-#container p {
-  font-size: 16px;
-  line-height: 22px;
-
-  color: #8c8c8c;
-
-  margin: 0;
+.menu-input ion-input {
+  color: #000; /* Black text */
 }
 
-#container a {
-  text-decoration: none;
+.mic-icon {
+  font-size: 22px;
+  color: #841535; /* Wine red icon */
+}
+
+/* Card styling */
+.generated-card {
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  margin-top: 20px;
+}
+
+.generated-card img.menu-image {
+  width: 100%;
+  border-radius: 12px 12px 0 0;
+}
+
+/* Buttons */
+ion-button[color="primary"] {
+  --background: #841535; /* Wine red */
+  --color: #fff;
+  margin-bottom: 10px;
+}
+
+ion-button[color="secondary"] {
+  --background: #000; /* Black */
+  --color: #fff;
+  margin-bottom: 10px;
+}
+
+ion-button[color="tertiary"] {
+  --background: #841535; /* Wine red for share */
+  --color: #fff;
+  margin-bottom: 10px;
 }

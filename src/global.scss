@@ -1,37 +1,217 @@
 /*
  * App Global CSS
  * ----------------------------------------------------------------------------
- * Put style rules here that you want to apply globally. These styles are for
- * the entire app and not just one component. Additionally, this file can be
- * used as an entry point to import other CSS/Sass files to be included in the
- * output CSS.
- * For more information on global stylesheets, visit the documentation:
- * https://ionicframework.com/docs/layout/global-stylesheets
+ * Global styles applied to the entire app
  */
 
-/* Core CSS required for Ionic components to work properly */
+/* Core Ionic CSS */
 @import "@ionic/angular/css/core.css";
 
-/* Basic CSS for apps built with Ionic */
+/* Basic Ionic CSS */
 @import "@ionic/angular/css/normalize.css";
 @import "@ionic/angular/css/structure.css";
 @import "@ionic/angular/css/typography.css";
 @import "@ionic/angular/css/display.css";
 
-/* Optional CSS utils that can be commented out */
+/* Optional utilities */
 @import "@ionic/angular/css/padding.css";
 @import "@ionic/angular/css/float-elements.css";
 @import "@ionic/angular/css/text-alignment.css";
 @import "@ionic/angular/css/text-transformation.css";
 @import "@ionic/angular/css/flex-utils.css";
 
-/**
- * Ionic Dark Mode
- * -----------------------------------------------------
- * For more info, please see:
- * https://ionicframework.com/docs/theming/dark-mode
- */
+/* -----------------------------
+   GLOBAL THEME OVERRIDES
+------------------------------ */
 
-/* @import "@ionic/angular/css/palettes/dark.always.css"; */
-/* @import "@ionic/angular/css/palettes/dark.class.css"; */
-@import '@ionic/angular/css/palettes/dark.system.css';
+ion-content {
+  --background: #f9f9f9; /* Off-white background */
+}
+
+/* Header & Toolbar */
+ion-toolbar {
+  --background: #841535;
+  --color: #ffffff;
+}
+
+/* Primary buttons */
+ion-button[color="primary"],
+ion-button[color="secondary"] {
+  --background: #841535;
+  --color: #ffffff;
+}
+
+/* Tertiary buttons (Black) */
+ion-button[color="tertiary"] {
+  --background: #000000;
+  --color: #ffffff;
+}
+
+/* Cards */
+ion-card {
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+/* Inputs */
+ion-item {
+  --background: #ffffff;
+  border-radius: 12px;
+  margin-bottom: 12px;
+}
+ion-content {
+  --background: #f8f7f4;
+}
+
+/* Typography */
+ion-title {
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  
+  
+}
+
+.toolbar-title
+{
+  padding: 20px;
+  margin: 20px;
+}
+
+p {
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Cards – restaurant look */
+ion-card {
+  border-radius: 18px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  background: #ffffff;
+}
+
+/* Buttons */
+ion-button {
+  border-radius: 14px;
+  font-weight: 500;
+}
+
+/* Input */
+ion-item {
+  border-radius: 14px;
+  --background: #ffffff;
+  margin-bottom: 14px;
+}
+body {
+  background: #f8f7f4 !important;
+  color: #841535 !important;
+}
+
+ion-toolbar {
+  --background: #841535 !important;
+  --color: #ffffff !important;
+}
+
+ion-content {
+  --background: #f8f7f4 !important;
+}
+
+ion-button {
+  --background: #841535 !important;
+  --color: #ffffff !important;
+}
+// .menu-input {
+//   background: #ffffff;
+//   border-radius: 14px;
+//   padding: 4px 8px;
+//   margin-bottom: 16px;
+// }
+
+.menu-text {
+  --color: #1c1c1c;     /* input text color */
+  --placeholder-color: #8a8a8a;
+  font-size: 16px;
+}
+
+ion-icon {
+  font-size: 22px;
+  color: #841535; /* wine red mic */
+}
+ion-input
+{
+  color: white;
+}
+
+/* Input container */
+// .menu-input {
+//   --background: #fdfaf8; /* off-white */
+//   border: 1.5px solid #841535; /* wine color */
+//   border-radius: 14px;
+//   padding: 6px 10px;
+//   margin-bottom: 18px;
+//   transition: all 0.3s ease;
+// }
+
+.menu-input
+{
+  padding: 15px;
+  display: flex;
+  
+  align-items: center;
+}
+
+/* Input text */
+ion-input {
+  --color: #000000; /* black text */
+  --placeholder-color: #9b9b9b;
+  font-size: 16px;
+}
+
+/* Focus effect */
+ion-input-focused {
+  border-color: #000000; /* black border on focus */
+  box-shadow: 0 4px 12px rgba(132, 21, 53, 0.25); /* light wine shadow */
+  background: #ffffff; /* white focus */
+}
+
+/* Mic icon */
+ion-input {
+  font-size: 22px;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+.menu-input {
+  --background: #fdfaf8;
+  border: 1.5px solid #841535;
+  border-radius: 14px;
+  padding: 6px 12px;
+  margin: 18px 6px; /* outer spacing */
+  display: flex;
+  align-items: center;
+}
+
+/* Input text */
+.menu-input ion-input {
+  --color: #000000;
+  --placeholder-color: #9a9a9a;
+  font-size: 16px;
+  padding-left: 6px;
+}
+
+/* Focus effect */
+.menu-input.ion-focused {
+  border-color: #000000;
+  box-shadow: 0 6px 14px rgba(132, 21, 53, 0.25);
+  background: #ffffff;
+}
+
+/* Mic button spacing */
+.menu-input ion-button {
+  margin-left: 10px; /* GAP between input & mic */
+}
+
+/* Mic icon */
+.menu-input ion-icon {
+  font-size: 22px;
+  color: #841535;
+}

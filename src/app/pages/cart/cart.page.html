@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Cart</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <ion-list *ngIf="cartItems.length > 0; else emptyCart">
+    <ion-item *ngFor="let item of cartItems">
+      <ion-label>
+        <h2>{{ item.title }}</h2>
+        <p>₹{{ item.price }} × {{ item.qty }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+  <ng-template #emptyCart>
+    <p>Your cart is empty 🛒</p>
+  </ng-template>
+
+  <h2>Total: ₹{{ total }}</h2>
+
+  <ion-button expand="block" color="success" (click)="orderWhatsApp()">
+    Order via WhatsApp
+  </ion-button>
+
+</ion-content>
