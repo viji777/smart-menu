@@ -78,5 +78,3 @@ Author
 Vijayalekshmi
 Full Stack Developer
 GitHub
-
-nt, say “Draft HR mail” and I’ll write it perfectly for YumBlock 🚀
