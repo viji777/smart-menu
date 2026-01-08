@@ -79,8 +79,4 @@ Vijayalekshmi
 Full Stack Developer
 GitHub
 
-
-
-Vercel link
-
-If you want, say “Draft HR mail” and I’ll write it perfectly for YumBlock 🚀
+nt, say “Draft HR mail” and I’ll write it perfectly for YumBlock 🚀
