@@ -1,25 +1,29 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class MenuService {
-  private API_URL = 'http://localhost:3000';
+
+  private API_URL = environment.apiUrl;
 
   constructor(private http: HttpClient) {}
 
+  // Generate AI Menu
   generateMenu(text: string) {
-    const headers = new HttpHeaders({ 'Content-Type': 'application/json' }); // ✅ FORCE JSON
+    const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
     return this.http.post(`${this.API_URL}/generate-menu`, { text }, { headers });
   }
 
+  // Save menu
   saveMenu(item: any) {
-  return this.http.post('http://localhost:3000/menu', item);
-}
+    return this.http.post(`${this.API_URL}/menu`, item);
+  }
 
-getMenus() {
-  return this.http.get('http://localhost:3000/menu');
-}
-
+  // Get all menus
+  getMenus() {
+    return this.http.get(`${this.API_URL}/menu`);
+  }
 }
